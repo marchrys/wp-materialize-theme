@@ -1,0 +1,14 @@
+/*
+Theme Name: First Theme
+Theme URI: https://capitainewp.io
+Author: Marios CHRYSIKOPOULOS
+Author URI: https://dysign.fr
+Description: Mon premier thème !
+Requires at least: WordPress 5.0
+Version: 1.0
+*/
+
+.container {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
