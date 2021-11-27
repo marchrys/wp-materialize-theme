@@ -14,17 +14,18 @@
     <header class="header">
         <nav>
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Logo</a>
+                <a href="<?php echo home_url() ?>" class="brand-logo"><?= get_bloginfo('name'); ?></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
-                </ul>
+                </ul> 
             </div>
         </nav> 
 
         <ul class="sidenav" id="mobile-demo">
             <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
         </ul>
+ 
     </header>
 
     <main>

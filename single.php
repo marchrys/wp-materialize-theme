@@ -1,25 +1,22 @@
 <?php get_header(); ?>
   <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
-    
+
     <article class="post">
-      <?php the_post_thumbnail(); ?>
-
-      <h1><?php the_title(); ?></h1>
-
-      <div class="post__meta">
-        <?php echo get_avatar( get_the_author_meta( 'ID' ), 40 ); ?>
-        <p>
-          Publié le <?php the_date(); ?>
-          par <?php the_author(); ?>
-          Dans la catégorie <?php the_category(); ?>
-          Avec les étiquettes <?php the_tags(); ?>
-        </p>
-      </div>
-
-      <div class="post__content">
-        <?php the_content(); ?>
-      </div>
-    </article>
+						<?php if(has_post_thumbnail()): ?>
+								<?php the_post_thumbnail(); ?>
+            <?php endif; ?>
+						<h1><?php the_title(); ?></h1>
+							
+            <p>
+              <i class="far fa-calendar"></i> Publié le <?php the_time( get_option( 'date_format' ) ); ?> 
+              par <?php the_author(); ?> 
+            </p>
+            <p><i class="far fa-comments"></i> <?= get_comments_number(); ?></p>
+            <p>Catégories: <?php the_category(', '); ?></p>
+            <p><i class="fas fa-tag"></i> Etiquettes: <?php the_tags(); ?></p>
+              
+							<div class="post-content"><?php the_content(); ?></div>
+		</article>
 
     <?php comments_template(); // Par ici les commentaires ?>
 
